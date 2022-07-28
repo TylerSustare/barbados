@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "api",
+      "request": "launch",
+      "type": "dart",
+      "args": ["--enable-vm-service", "--pause-isolates-on-exit"],
+      "env": {
+        "ENV": "dev"
+      },
+      "program": "${workspaceRoot}/api/bin/api.dart"
+    },
+    {
+      "name": "api (test)",
+      "request": "launch",
+      "type": "dart",
+      "env": {
+        "ENV": "test"
+      },
+      "program": "${workspaceRoot}/api/bin/api.dart"
+    }
+  ]
+}
