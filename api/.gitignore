@@ -2,3 +2,6 @@
 .dart_tool/
 .packages
 pubspec.lock
+
+# compiled api
+bin/api
