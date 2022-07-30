@@ -7,7 +7,7 @@ During development we're gong to create what we would like a Flying Fish app to 
 Goals
 
 - [x] Create a very simple REST based backend first
-  - [ ] Simple DB with [SQLite](https://pub.dev/packages/sqlite3) or [Hive](https://pub.dev/packages/hive)
+  - [x] Simple DB with [SQLite](https://pub.dev/packages/sqlite3) or [Hive](https://pub.dev/packages/hive)
   - [x] Hot reloads during development with [hotreloader](https://pub.dev/packages/hotreloader)
 - [x] Deploy the API to [fly.io](https://fly.io) for maximum schtick about "Fly" and "Flying Fish"
   - [x] [https://barbados.fly.dev](https://barbados.fly.dev/)

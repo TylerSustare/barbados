@@ -5,3 +5,6 @@ pubspec.lock
 
 # compiled api
 bin/api
+
+# database
+bin/db

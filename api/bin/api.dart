@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:hive/hive.dart';
 import 'package:hotreloader/hotreloader.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart' as shelf_io;
@@ -13,6 +14,11 @@ Future main() async {
       onAfterReload: (ctx) => print('Hot-reload result: ${ctx.result}'),
     );
   }
+
+  // TODO: abstract to a DB initializer
+  Hive.init('./bin/db');
+  await Hive.openBox('db');
+
   // If the "PORT" environment variable is set, listen to it. Otherwise, 8080.
   // https://cloud.google.com/run/docs/reference/container-contract#port
   final port = int.parse(Platform.environment['PORT'] ?? '8080');
