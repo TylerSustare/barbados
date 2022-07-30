@@ -12,6 +12,7 @@ Goals
 - [x] Deploy the API to [fly.io](https://fly.io) for maximum schtick about "Fly" and "Flying Fish"
   - [x] [https://barbados.fly.dev](https://barbados.fly.dev/)
 - [ ] Modify the default flutter counter app to use the backend
+  - [x] created with `flutter create --project-name barbados flutter` to make the app name with a path called `flutter`
   - [ ] Deploy Flutter web version to [fly.io](https://fly.io) for maximum schtick about "Fly" and "Flying Fish"
 - [ ] Celebrate
 
