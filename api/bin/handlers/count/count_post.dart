@@ -19,6 +19,7 @@ Future<Response> countPostHandler(Request request) async {
     headers: {
       'content-type': 'application/json',
       'Cache-Control': 'public, max-age=604800',
+      'Access-Control-Allow-Origin': '*',
     },
   );
 }
