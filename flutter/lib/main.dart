@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const MyApp());
@@ -50,6 +52,48 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  @override
+  void initState() {
+    super.initState();
+    _getCount();
+  }
+
+  void _getCount() async {
+    var response = await http.get(Uri.parse('http://localhost:8080/count'));
+    if (response.statusCode == 200) {
+      var body = json.decode(response.body);
+      setState(() {
+        _counter = body['count'] ?? 0;
+      });
+    }
+  }
+
+  Future<http.Response> _postCount() {
+    var url = Uri.parse('http://localhost:8080/count');
+    return http.post(
+      url,
+      // TODO - make creating this request more enjoyable
+      body: '{"count": $_counter}',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    );
+  }
+
+  Future<void> _showSaveSuccessDialog({required BuildContext context}) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          title: Text('Saved your count!'),
+          content: Text(
+            'Try increasing the count and pressing the Download button to fetch your count from the backend',
+          ),
+        );
+      },
+    );
+  }
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -74,6 +118,21 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        actions: [
+          IconButton(
+            onPressed: () async {
+              http.Response response = await _postCount();
+              if (response.statusCode == 200) {
+                _showSaveSuccessDialog(context: context);
+              }
+            },
+            icon: const Icon(Icons.save),
+          ),
+        ],
+        leading: IconButton(
+          onPressed: () => _getCount(),
+          icon: const Icon(Icons.download),
+        ),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
