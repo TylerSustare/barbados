@@ -2,6 +2,7 @@
 
 set -e
 
+echo "Running docker test script"
 image="$(docker build -q .)"
 echo Image created: "$image"
 container=$(docker run -d -p 8080:8080 --rm "$image")

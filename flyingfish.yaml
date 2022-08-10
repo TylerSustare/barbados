@@ -1,0 +1,32 @@
+version: 0.0.1
+
+backend:
+  api: rest
+  db: hive
+
+flutter:
+  template: counter
+  state_management: null
+
+deploy:
+  api: fly
+  # where to deploy the API
+  # container
+  # GCP Cloud Run, AWS App Runner, Azure Container Apps?
+  # FaaS
+  # Firebase - Dart2JS for Firebase Functions
+  db: volume # permanent volume on the fly container
+  # where to deploy the DB -
+  # Hive - volume
+  # PG - Fly PG, Supabase,
+  # SQLite - volume with litestream?
+  # Mongo - Atlas
+  web: fly
+  # where to deploy the JS for web -
+  # anywhere that runs JS
+  ios: codemagic
+  android: codemagic
+  # bundle executables for package managers
+  macos: brew
+  linux: apt
+  windows: choco
