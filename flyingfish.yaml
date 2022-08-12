@@ -1,7 +1,9 @@
 version: 0.0.1
 
 backend:
-  api: rest
+  api:
+    type: rest
+    prod_url: "https://barbados-web.fly.dev"
   db: hive
 
 flutter:
