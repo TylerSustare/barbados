@@ -8,3 +8,7 @@ bin/api
 
 # database
 bin/db
+
+# build artifacts for static web files during deployment
+public/*
+!public/.keep

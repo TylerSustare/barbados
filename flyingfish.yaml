@@ -22,6 +22,7 @@ deploy:
   # SQLite - volume with litestream?
   # Mongo - Atlas
   web: fly
+  # server or standalone
   # where to deploy the JS for web -
   # anywhere that runs JS
   ios: codemagic

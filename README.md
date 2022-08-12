@@ -20,8 +20,12 @@ Goals
     - [x] macos
     - [x] linux
     - [x] windows
-  - [ ] Deploy Flutter web version to [fly.io](https://fly.io) for maximum schtick about "Fly" and "Flying Fish"
-- [ ] Celebrate
+  - [x] Deploy Flutter web version to [fly.io](https://fly.io) for maximum schtick about "Fly" and "Flying Fish"
+    - [x] As a static fly project - From the flutter project
+    - [x] As static web assets in the Dart server
+      - [x] [https://barbados.fly.dev](https://barbados.fly.dev/)
+- [x] Celebrate
+- [ ] Use this in flying-fish
 
 ### Retro - Is this useful? What is missing to make this MVP Level
 
