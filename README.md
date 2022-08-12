@@ -11,15 +11,15 @@ Goals
   - [x] Hot reloads during development with [hotreloader](https://pub.dev/packages/hotreloader)
 - [x] Deploy the API to [fly.io](https://fly.io) for maximum schtick about "Fly" and "Flying Fish"
   - [x] [https://barbados.fly.dev](https://barbados.fly.dev/)
-- [ ] Modify the default flutter counter app to use the backend
+- [x] Modify the default flutter counter app to use the backend
   - [x] created with `flutter create --project-name barbados flutter` to make the app name with a path called `flutter`
   - [x] test with flutter clients
     - [x] ios
     - [x] android
     - [x] web
     - [x] macos
-    - [ ] linux
-    - [ ] windows
+    - [x] linux
+    - [x] windows
   - [ ] Deploy Flutter web version to [fly.io](https://fly.io) for maximum schtick about "Fly" and "Flying Fish"
 - [ ] Celebrate
 
