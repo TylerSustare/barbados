@@ -1,16 +1,15 @@
 # barbados
 
-A new Flutter project.
+# Deploy Web as separate build
 
-## Getting Started
+- `flutter build web`
+- `cd build/web`
+- `fly deploy --local-only`
 
-This project is a starting point for a Flutter application.
+# Deploy web on dart server
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `cd flutter`
+- `flutter build web`
+- `cp -r build/web/ ../api/public`
+- `cd ../api`
+- `fly deploy --local-only`

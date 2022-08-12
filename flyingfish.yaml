@@ -1,7 +1,9 @@
 version: 0.0.1
 
 backend:
-  api: rest
+  api:
+    type: rest
+    prod_url: "https://barbados-web.fly.dev"
   db: hive
 
 flutter:
@@ -22,6 +24,7 @@ deploy:
   # SQLite - volume with litestream?
   # Mongo - Atlas
   web: fly
+  # server or standalone
   # where to deploy the JS for web -
   # anywhere that runs JS
   ios: codemagic

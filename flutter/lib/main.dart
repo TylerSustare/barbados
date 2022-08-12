@@ -1,6 +1,9 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
+var apiUrl = kDebugMode ? 'http://localhost:8080' : 'https://barbados.fly.dev';
 
 void main() {
   runApp(const MyApp());
@@ -59,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _getCount() async {
-    var response = await http.get(Uri.parse('http://localhost:8080/count'));
+    var response = await http.get(Uri.parse('$apiUrl/count'));
     if (response.statusCode == 200) {
       var body = json.decode(response.body);
       setState(() {
@@ -69,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<http.Response> _postCount() {
-    var url = Uri.parse('http://localhost:8080/count');
+    var url = Uri.parse('$apiUrl/count');
     return http.post(
       url,
       // TODO - make creating this request more enjoyable
