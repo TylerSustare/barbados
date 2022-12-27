@@ -1,3 +1,9 @@
+# Archived
+
+This was a fun project to work on, but I'd recommend using https://serverpod.dev/ for a full stack dart framework. They have a full team and funding to work on a problem like this.
+
+___
+
 ## Flying Fish sample app
 
 During development we're gong to create what we would like a Flying Fish app to look like. Sometimes the best way to know how to make generators is to do it by hand first.
